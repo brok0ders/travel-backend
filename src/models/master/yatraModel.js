@@ -39,10 +39,26 @@ const YatraSchema = new Schema({
     require: true,
   },
   seats: {
-    type: Map,
-    of: Map,
-    of: Number,
-    default: {},
+    September: {
+      type: Map,
+      of: Number,
+      default: {},
+    },
+    October: {
+      type: Map,
+      of: Number,
+      default: {},
+    },
+    March: {
+      type: Map,
+      of: Number,
+      default: {},
+    },
+    April: {
+      type: Map,
+      of: Number,
+      default: {},
+    },
   },
 
   highlights: [String],
