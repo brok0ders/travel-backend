@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import Blog from "./master/blogModel.js";
 
 // Define the schema for the Yatra model
 const YatraSchema = new Schema({
@@ -30,7 +31,19 @@ const YatraSchema = new Schema({
     type: Number,
     require: true,
   },
+  altitude: {
+    type: Number,
+    require: true,
+  },
+  thumbNail: {
+    type: String,
+    require: true,
+  },
   imageUrl: {
+    type: String,
+    require: true,
+  },
+  aboutImage: {
     type: String,
     require: true,
   },
@@ -92,30 +105,13 @@ const YatraSchema = new Schema({
       },
     },
   ],
+  gallery: [String],
   exclusion: [String],
   inclusion: [String],
   blogs: [
     {
-      title: {
-        type: String,
-        required: true,
-      },
-      thumbnail: {
-        type: String,
-        required: true,
-      },
-      author: {
-        type: String,
-        required: true,
-      },
-      date: {
-        type: String,
-        required: true,
-      },
-      description: {
-        type: String,
-        required: true,
-      },
+      type: mongoose.Types.ObjectId,
+      ref: Blog,
     },
   ],
   seasonData: [
